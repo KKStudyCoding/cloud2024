@@ -12,7 +12,8 @@ import org.springframework.web.client.RestTemplate;
 
 @RestController
 public class OrderController {
-    public static final String PaymentSrv_URL = "http://localhost:8001";
+//    public static final String PaymentSrv_URL = "http://localhost:8001"; //硬编码，先写死，等使用到consul再观察对比
+    public static final String PaymentSrv_URL = "http://cloud-payment-service"; //使用consul之后，写服务注册中心上微服务名称
 
     @Resource
     private RestTemplate restTemplate;
