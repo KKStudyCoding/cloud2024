@@ -7,11 +7,11 @@ import org.springframework.cloud.context.config.annotation.RefreshScope;
 import tk.mybatis.spring.annotation.MapperScan;
 
 @SpringBootApplication
-@MapperScan("com.atguigu.cloud.mapper") //import tk.mybatis.spring.annotation.MapperScan;
 @EnableDiscoveryClient
-@RefreshScope //动态刷新，当consul中的key-value下 config/xxxxx/data 中的配置有变更的时候，做刷新获取新的内容
-public class Main8001 {
+@RefreshScope
+@MapperScan(value = "com.atguigu.cloud.mapper")
+public class Main8002 {
     public static void main(String[] args) {
-        SpringApplication.run(Main8001.class, args);
+        SpringApplication.run(Main8002.class, args);
     }
 }

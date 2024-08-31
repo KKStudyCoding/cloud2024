@@ -31,4 +31,9 @@ public class OrderController {
     }
 
     //删除和修改作为家庭作业
+
+    @GetMapping("consumer/pay/get/info")
+    public String getInfoByConsul(){
+        return restTemplate.getForObject(PaymentSrv_URL+"/pay/get/info", String.class);
+    }
 }
